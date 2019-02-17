@@ -1,0 +1,130 @@
+BenchmarkTemplate 1 348855369 ns/op 415317000 user-ns/op
+BenchmarkUnicode 1 177620468 ns/op 216128000 user-ns/op
+BenchmarkGoTypes 1 1219691005 ns/op 1518550000 user-ns/op
+BenchmarkCompiler 1 6475341396 ns/op 7864505000 user-ns/op
+BenchmarkSSA 1 17819723745 ns/op 23391611000 user-ns/op
+BenchmarkFlate 1 242523916 ns/op 278795000 user-ns/op
+BenchmarkGoParser 1 277662508 ns/op 341037000 user-ns/op
+BenchmarkReflect 1 779640056 ns/op 940465000 user-ns/op
+BenchmarkTar 1 330517479 ns/op 400186000 user-ns/op
+BenchmarkXML 1 404248342 ns/op 478000000 user-ns/op
+BenchmarkStdCmd 1 61978699974 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 353965013 ns/op 428036000 user-ns/op
+BenchmarkUnicode 1 167363936 ns/op 217768000 user-ns/op
+BenchmarkGoTypes 1 1284386015 ns/op 1562969000 user-ns/op
+BenchmarkCompiler 1 6403267709 ns/op 7907639000 user-ns/op
+BenchmarkSSA 1 17776565026 ns/op 23184276000 user-ns/op
+BenchmarkFlate 1 254048329 ns/op 279609000 user-ns/op
+BenchmarkGoParser 1 277134402 ns/op 333908000 user-ns/op
+BenchmarkReflect 1 838122811 ns/op 947041000 user-ns/op
+BenchmarkTar 1 331815000 ns/op 407147000 user-ns/op
+BenchmarkXML 1 446565826 ns/op 559684000 user-ns/op
+BenchmarkStdCmd 1 60511668430 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 343779605 ns/op 410590000 user-ns/op
+BenchmarkUnicode 1 168052647 ns/op 209689000 user-ns/op
+BenchmarkGoTypes 1 1289116304 ns/op 1539366000 user-ns/op
+BenchmarkCompiler 1 6589097793 ns/op 7837982000 user-ns/op
+BenchmarkSSA 1 17882739199 ns/op 23327343000 user-ns/op
+BenchmarkFlate 1 228237581 ns/op 263339000 user-ns/op
+BenchmarkGoParser 1 285935759 ns/op 346537000 user-ns/op
+BenchmarkReflect 1 799398671 ns/op 968287000 user-ns/op
+BenchmarkTar 1 332883873 ns/op 399175000 user-ns/op
+BenchmarkXML 1 435040270 ns/op 541783000 user-ns/op
+BenchmarkStdCmd 1 60874770492 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 354147739 ns/op 427598000 user-ns/op
+BenchmarkUnicode 1 176870665 ns/op 226331000 user-ns/op
+BenchmarkGoTypes 1 1249880486 ns/op 1545124000 user-ns/op
+BenchmarkCompiler 1 6484965163 ns/op 7961129000 user-ns/op
+BenchmarkSSA 1 17826786325 ns/op 23150167000 user-ns/op
+BenchmarkFlate 1 233580936 ns/op 267149000 user-ns/op
+BenchmarkGoParser 1 290054572 ns/op 346758000 user-ns/op
+BenchmarkReflect 1 753831802 ns/op 896515000 user-ns/op
+BenchmarkTar 1 335727751 ns/op 403505000 user-ns/op
+BenchmarkXML 1 424911895 ns/op 511574000 user-ns/op
+BenchmarkStdCmd 1 61526756500 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 354956492 ns/op 431528000 user-ns/op
+BenchmarkUnicode 1 156420595 ns/op 205604000 user-ns/op
+BenchmarkGoTypes 1 1225921122 ns/op 1501476000 user-ns/op
+BenchmarkCompiler 1 6421829222 ns/op 7873104000 user-ns/op
+BenchmarkSSA 1 18000759584 ns/op 23064320000 user-ns/op
+BenchmarkFlate 1 237426599 ns/op 281427000 user-ns/op
+BenchmarkGoParser 1 275434755 ns/op 341314000 user-ns/op
+BenchmarkReflect 1 798886277 ns/op 953473000 user-ns/op
+BenchmarkTar 1 332219283 ns/op 408503000 user-ns/op
+BenchmarkXML 1 422975053 ns/op 539624000 user-ns/op
+BenchmarkStdCmd 1 60435434261 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 348926685 ns/op 419688000 user-ns/op
+BenchmarkUnicode 1 167695084 ns/op 206129000 user-ns/op
+BenchmarkGoTypes 1 1195366749 ns/op 1502051000 user-ns/op
+BenchmarkCompiler 1 6434399556 ns/op 7890199000 user-ns/op
+BenchmarkSSA 1 17599177794 ns/op 22885199000 user-ns/op
+BenchmarkFlate 1 250635394 ns/op 280403000 user-ns/op
+BenchmarkGoParser 1 293918936 ns/op 357989000 user-ns/op
+BenchmarkReflect 1 791437317 ns/op 926488000 user-ns/op
+BenchmarkTar 1 309808499 ns/op 375102000 user-ns/op
+BenchmarkXML 1 435922351 ns/op 534228000 user-ns/op
+BenchmarkStdCmd 1 92903041276 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 364748078 ns/op 432296000 user-ns/op
+BenchmarkUnicode 1 167641205 ns/op 215500000 user-ns/op
+BenchmarkGoTypes 1 1249623944 ns/op 1537441000 user-ns/op
+BenchmarkCompiler 1 6572127106 ns/op 7927641000 user-ns/op
+BenchmarkSSA 1 17851534927 ns/op 23444450000 user-ns/op
+BenchmarkFlate 1 234894758 ns/op 271552000 user-ns/op
+BenchmarkGoParser 1 277601211 ns/op 334474000 user-ns/op
+BenchmarkReflect 1 796610454 ns/op 918334000 user-ns/op
+BenchmarkTar 1 343882818 ns/op 412236000 user-ns/op
+BenchmarkXML 1 433487385 ns/op 545749000 user-ns/op
+BenchmarkStdCmd 1 61906928467 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 378322533 ns/op 443657000 user-ns/op
+BenchmarkUnicode 1 171504345 ns/op 209595000 user-ns/op
+BenchmarkGoTypes 1 1220044464 ns/op 1515656000 user-ns/op
+BenchmarkCompiler 1 6514382292 ns/op 7981334000 user-ns/op
+BenchmarkSSA 1 18158331084 ns/op 23545581000 user-ns/op
+BenchmarkFlate 1 236364123 ns/op 273256000 user-ns/op
+BenchmarkGoParser 1 284051358 ns/op 345040000 user-ns/op
+BenchmarkReflect 1 766522832 ns/op 928630000 user-ns/op
+BenchmarkTar 1 347578827 ns/op 406443000 user-ns/op
+BenchmarkXML 1 432018613 ns/op 532266000 user-ns/op
+BenchmarkStdCmd 1 60702585007 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 394213130 ns/op 453173000 user-ns/op
+BenchmarkUnicode 1 164080542 ns/op 189614000 user-ns/op
+BenchmarkGoTypes 1 1254771333 ns/op 1553563000 user-ns/op
+BenchmarkCompiler 1 6441039661 ns/op 7801939000 user-ns/op
+BenchmarkSSA 1 17755104495 ns/op 23244481000 user-ns/op
+BenchmarkFlate 1 239845385 ns/op 273661000 user-ns/op
+BenchmarkGoParser 1 286422355 ns/op 341407000 user-ns/op
+BenchmarkReflect 1 786012017 ns/op 931729000 user-ns/op
+BenchmarkTar 1 323167484 ns/op 393341000 user-ns/op
+BenchmarkXML 1 450417412 ns/op 546060000 user-ns/op
+BenchmarkStdCmd 1 60325450379 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes
+BenchmarkTemplate 1 347134338 ns/op 419664000 user-ns/op
+BenchmarkUnicode 1 160365510 ns/op 199848000 user-ns/op
+BenchmarkGoTypes 1 1259553046 ns/op 1532288000 user-ns/op
+BenchmarkCompiler 1 6494617013 ns/op 7782007000 user-ns/op
+BenchmarkSSA 1 17821494486 ns/op 22851843000 user-ns/op
+BenchmarkFlate 1 228268567 ns/op 264139000 user-ns/op
+BenchmarkGoParser 1 285750934 ns/op 343992000 user-ns/op
+BenchmarkReflect 1 738342186 ns/op 907744000 user-ns/op
+BenchmarkTar 1 334004458 ns/op 403889000 user-ns/op
+BenchmarkXML 1 429357215 ns/op 541704000 user-ns/op
+BenchmarkStdCmd 1 60534027384 ns/op
+BenchmarkHelloSize 1 757760 text-bytes 130968 data-bytes 1080312 exe-bytes
+BenchmarkCmdGoSize 1 10199040 text-bytes 400536 data-bytes 14004836 exe-bytes

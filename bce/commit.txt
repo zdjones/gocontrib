@@ -1,0 +1,24 @@
+cmd/compile: make prove use poset to check non-negatives
+
+Prove currently fails to remove bounds checks of the form:
+
+if i >= 0 {              // hint that i is non-negative
+    for i < len(data) {  // i becomes Phi in the loop SSA
+        _ = data[i]      // data[Phi]; bounds check!!
+	i++
+    }
+}
+
+addIndVarRestrictions fails to identify that the loop induction 
+variable, (Phi), is non-negative. As a result, the restrictions, 
+i <= Phi < len(data), are only added for the signed domain. When 
+testing the bounds check, addBranchRestrictions is similarly unable 
+to infer that Phi is non-negative. As a result, the restriction, 
+Phi >= len(data), is only added/tested for the unsigned domain.
+
+This CL changes the isNonNegative method to utilise the factTable's 
+partially ordered set (poset). It also adds field factTable.zero to
+allow isNonNegative to query the poset using the zero(0) constant
+found or created early in prove.
+
+Fixes #28956

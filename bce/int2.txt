@@ -1,0 +1,194 @@
+# command-line-arguments
+
+5 Checkpoint: Begin Prove
+Begin len/cap op search
+
+9   update from len/cap search
+9    parent=b3, update v19 v8 signed >=
+9    parent=b3, new limits v19 v8 signed >= sm,SM,um,UM=0,smax,0,umax
+End len/cap op search 
+ Get Induction Vars from loop_bce 
+
+12 Induction variable: b8 entry: b9 limits [v7,25], increment 1 (v38)
+Begin worklist value prop
+
+
+5 Checkpoint: b1 DFS Descending, idom:<nil>
+
+6 Checkpoint: b2 DFS Descending, idom:b1
+5  addRestrictions from addBranchRestrictions plain
+5   update from addRestrictions
+5    parent=b1, update nil v9 boolean !=
+5  addRestrictions from addBranchRestrictions domainRelationTable
+5   update from addRestrictions
+5    parent=b1, update v7 v8 signed <
+5    parent=b1, new limits v7 v8 signed < sm,SM,um,UM=smin,-1,0,umax
+6 Restore: b2 DFS Descending(simplify)
+6 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+
+
+9 Checkpoint: b3 DFS Descending, idom:b1
+5  addRestrictions from addBranchRestrictions plain
+5   update from addRestrictions
+5    parent=b1, update nil v9 boolean ==
+5  addRestrictions from addBranchRestrictions domainRelationTable
+5   update from addRestrictions
+5    parent=b1, update v7 v8 signed >=
+5    parent=b1, new limits v7 v8 signed >= sm,SM,um,UM=0,smax,0,umax
+
+10 Checkpoint: b4 DFS Descending, idom:b3
+9  addRestrictions from addBranchRestrictions plain
+9   update from addRestrictions
+9    parent=b3, update nil v20 boolean !=
+9  addRestrictions from addBranchRestrictions domainRelationTable
+9   update from addRestrictions
+9    parent=b3, update v7 v19 signed <
+9   update from addRestrictions
+9    parent=b3, update v7 v19 unsigned <
+
+12 Checkpoint: b6 DFS Descending, idom:b4
+10  addRestrictions from addBranchRestrictions plain
+10   update from addRestrictions
+10    parent=b4, update nil v30 boolean !=
+10  addRestrictions from addBranchRestrictions domainRelationTable
+10   update from addRestrictions
+10    parent=b4, update v28 v19 signed <
+10    parent=b4, new limits v19 v28 signed > sm,SM,um,UM=26,smax,26,umax
+10   update from addRestrictions
+10    parent=b4, update v28 v19 unsigned <
+10    parent=b4, new limits v19 v28 unsigned > sm,SM,um,UM=26,smax,26,umax
+
+12 Checkpoint: b8 DFS Descending, idom:b6
+
+13 Checkpoint: b9 DFS Descending, idom:b8
+12  addRestrictions from addIndVarRestrictions
+12   update from addRestrictions
+12    parent=b8, update v7 v38 signed <=
+12   update from addRestrictions
+12    parent=b8, update v7 v38 unsigned <=
+12   update from addRestrictions
+12    parent=b8, update v38 v28 signed <=
+12    parent=b8, new limits v38 v28 signed <= sm,SM,um,UM=smin,25,0,umax
+12   update from addRestrictions
+12    parent=b8, update v38 v28 unsigned <=
+12    parent=b8, new limits v38 v28 unsigned <= sm,SM,um,UM=smin,25,0,25
+12  addRestrictions from addBranchRestrictions plain
+12   update from addRestrictions
+12    parent=b8, update nil v39 boolean !=
+12  addRestrictions from addBranchRestrictions domainRelationTable
+12   update from addRestrictions
+12    parent=b8, update v38 v28 signed <=
+12    parent=b8, new limits v38 v28 signed <= sm,SM,um,UM=smin,25,0,25
+12   update from addRestrictions
+12    parent=b8, update v38 v28 unsigned <=
+12    parent=b8, new limits v38 v28 unsigned <= sm,SM,um,UM=smin,25,0,25
+
+13 Checkpoint: b12 DFS Descending, idom:b9
+13  addRestrictions from addBranchRestrictions plain
+13   update from addRestrictions
+13    parent=b9, update nil v44 boolean !=
+13  addRestrictions from addBranchRestrictions domainRelationTable
+13   update from addRestrictions
+13    parent=b9, update v38 v19 signed <
+13   update from addRestrictions
+13    parent=b9, update v38 v19 unsigned <
+
+12 Checkpoint: b10 DFS Descending, idom:b12
+12 Restore: b10 DFS Descending(simplify)
+12 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+12 Restore old limits v38 sm,SM,um,UM=smin,25,0,25
+12 Restore old limits v19 sm,SM,um,UM=26,smax,26,umax
+
+13 Restore: b12 DFS Descending(simplify)
+13 Restore old limits v19 sm,SM,um,UM=26,smax,26,umax
+13 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+13 Restore old limits v38 sm,SM,um,UM=smin,25,0,25
+
+
+13 Checkpoint: b13 DFS Descending, idom:b9
+13  addRestrictions from addBranchRestrictions plain
+13   update from addRestrictions
+13    parent=b9, update nil v44 boolean ==
+13  addRestrictions from addBranchRestrictions domainRelationTable
+13   update from addRestrictions
+13    parent=b9, update v38 v19 signed >=
+13 update poset unsat v38 v19 signed >=
+13   update from addRestrictions
+13    parent=b9, update v38 v19 unsigned >=
+13 Proved IsInBounds (v44)
+13 Remove Branch b9 Branch: 2
+13 Restore old limits v19 sm,SM,um,UM=26,smax,26,umax
+
+13 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+13 Restore old limits v38 sm,SM,um,UM=smin,25,0,25
+
+
+13 Restore: b9 DFS Descending(simplify)
+13 Restore old limits v19 sm,SM,um,UM=26,smax,26,umax
+13 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+
+0 Checkpoint: b11 DFS Descending, idom:b8
+12  addRestrictions from addBranchRestrictions plain
+12   update from addRestrictions
+12    parent=b8, update nil v39 boolean ==
+12  addRestrictions from addBranchRestrictions domainRelationTable
+12   update from addRestrictions
+12    parent=b8, update v38 v28 signed >
+12    parent=b8, new limits v38 v28 signed > sm,SM,um,UM=26,smax,26,umax
+0 Restore: b11 DFS Descending(simplify)
+0 Restore old limits v19 sm,SM,um,UM=26,smax,26,umax
+0 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+12 Restore: b8 DFS Descending(simplify)
+12 Restore old limits v19 sm,SM,um,UM=26,smax,26,umax
+12 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+12 Restore: b6 DFS Descending(simplify)
+12 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+12 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+
+10 Checkpoint: b7 DFS Descending, idom:b4
+10  addRestrictions from addBranchRestrictions plain
+10   update from addRestrictions
+10    parent=b4, update nil v30 boolean ==
+10  addRestrictions from addBranchRestrictions domainRelationTable
+10   update from addRestrictions
+10    parent=b4, update v28 v19 signed >=
+10    parent=b4, new limits v19 v28 signed <= sm,SM,um,UM=0,25,0,25
+10   update from addRestrictions
+10    parent=b4, update v28 v19 unsigned >=
+10    parent=b4, new limits v19 v28 unsigned <= sm,SM,um,UM=0,25,0,25
+10 Restore: b7 DFS Descending(simplify)
+10 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+10 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+10 Restore: b4 DFS Descending(simplify)
+10 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+10 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+
+9 Checkpoint: b5 DFS Descending, idom:b3
+9  addRestrictions from addBranchRestrictions plain
+9   update from addRestrictions
+9    parent=b3, update nil v20 boolean ==
+9  addRestrictions from addBranchRestrictions domainRelationTable
+9   update from addRestrictions
+9    parent=b3, update v7 v19 signed >=
+9   update from addRestrictions
+9    parent=b3, update v7 v19 unsigned >=
+9 Restore: b5 DFS Descending(simplify)
+9 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+9 Restore old limits v7 sm,SM,um,UM=0,smax,0,umax
+
+9 Restore: b3 DFS Descending(simplify)
+9 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+
+5 Restore: b1 DFS Descending(simplify)
+5 Restore old limits v19 sm,SM,um,UM=0,smax,0,umax
+
+5 Restore: End Prove
+dumped SSA to ./ssa.html
+./f.go:12:19: Induction variable: limits [v7,25], increment 1 (v38)

@@ -1,0 +1,77 @@
+cmd/compile: make prove use poset inference in checking non-negatives
+
+Motivation - Prove currently fails to remove bounds checks in loops 
+where the induction variable is initialised with a signed integer 
+variable, despite having already learned that that signed integer 
+variable is non-negative. For example:
+
+if i >= 0 {  			// hint that i is non-negative
+        for i < len(data) {     // i == Phi in loop
+                _ = data[i]    	// bounds check!
+                i++
+        }
+}
+
+The failure presents in two places (referencing the example above): 
+
+(1) addIndVarRestrictions is correctly learning that the loop 
+induction variable, Phi, is lower-bounded by i, but is not further 
+inferring that Phi's lower bound is i's lower bound, and therefore 
+fails to identify Phi as non-negative. As a result, the added
+restrictions, i <= Phi < len(data), are only added for the signed
+domain.
+
+(2) Later, testing the negative branch from the bounds check for 
+data[phi], addBranchRestrictions is similarly unable to infer that
+Phi is non-negative. As a result, the added/tested restriction,
+Phi >= len(data) is only added/tested for the unsigned domain.
+
+Because Phi < len(data) was added for the signed domain, and
+Phi >= len(data) is added/tested in the unsigned domain, prove fails
+to discover that the failed bounds check is unsatisifiable.
+
+The missed opportunity for inference in both cases is during the 
+respective tests of whether Phi is non-negative.
+
+In the current implementation, addIndVarRestrictions uses the naive
+func, isNonNegative, to test whether the indVar's recorded min and max
+are themselves both non-negative. Changing this to instead use 
+factTable's inNonNegative method, which does make a single inferential
+step, is sufficient to resolve this specific case, but seems 
+unsatisfying. This CL includes this change from the naive 
+isNonNegative to the factTable method, but also addresses the root
+cause. 
+
+The root cause is the limited inference within factTable's method
+isNonNegative. The factTable's inference is currently limited to
+a lookup of the Value being tested in the factTable's map of Value
+limits. Little or no inference is performed as these limits are
+learned, so referencing them only provides information that was
+learned directly. I haven't tested it, but they may also be
+quite sensitive to the order in which the limits are learned.
+
+I understand this limitation may be by design, as performing all the
+available inference on the map of Limits after each new fact is added
+could be very costly, so I didn't explore that approach any further.
+
+This CL instead utilises factTable's partially ordered set (poset), 
+where all the inference is already available for querying. Currently, 
+factTable's isNonNegative can only utilise the Value it's been passed,
+so is constrained to use only that Value and it's Arg Values for any
+query of poset. 
+
+This CL adds a field to factTable which holds the Value pointer for 
+the zero(0) constant found or created early in prove. That zero is
+then used by factTable's isNonNegative to query the signed domain
+poset. With this approach, if any live set of relationships has been
+learned, in any order, which infer that Value >= 0, isNonNegative
+will return true. 
+ 
+
+I think having this reference to the zero Value will be valuable in
+addressing further issues in prove, particularly those related to
+slicing Ops. I have another CL, dependent on this one, that fixes 
+a similar issue related to bounds check hints of the form _=a[n].
+
+
+Fixes #28956

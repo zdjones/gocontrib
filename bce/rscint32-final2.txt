@@ -1,0 +1,48 @@
+# command-line-arguments
+dumped SSA to ./ssa.html
+./f.go:64:6: parent=b1, update v11 v9 >=
+./f.go:64:6: parent=b1, new limits v11 v9 >= sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+./f.go:64:6: parent=b1, update nil v12 !=
+./f.go:64:6: parent=b1, update v8 v11 <
+./f.go:64:6: parent=b1, update v10 v11 <
+./f.go:64:6: parent=b1, update nil v12 ==
+./f.go:64:6: parent=b1, update v8 v11 >=
+./f.go:64:6: parent=b1, update v10 v11 >=
+./f.go:64:13: parent=b4, update nil v19 !=
+./f.go:64:13: parent=b4, update v18 v9 !=
+./f.go:64:13: parent=b4, new limits v18 v9 != sm,SM,um,UM=-9223372036854775808,9223372036854775807,0,18446744073709551615
+./f.go:64:13: parent=b4, update v18 v9 !=
+./f.go:64:13: parent=b4, new limits v18 v9 != sm,SM,um,UM=-9223372036854775808,9223372036854775807,1,18446744073709551615
+./f.go:64:13: parent=b4, update nil v19 ==
+./f.go:64:13: parent=b4, update v18 v9 ==
+./f.go:64:13: parent=b4, new limits v18 v9 == sm,SM,um,UM=0,0,0,18446744073709551615
+./f.go:64:13: parent=b4, update v18 v9 ==
+./f.go:64:13: parent=b4, new limits v18 v9 == sm,SM,um,UM=0,0,0,0
+./f.go:67:9: parent=b3, update nil v26 !=
+./f.go:67:9: parent=b3, update v8 v25 >
+./f.go:67:9: parent=b3, new limits v8 v25 > sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+./f.go:67:9: parent=b3, update nil v26 ==
+./f.go:67:9: parent=b3, update v8 v25 <=
+./f.go:67:9: parent=b3, new limits v8 v25 <= sm,SM,um,UM=-9223372036854775808,0,0,18446744073709551615
+./f.go:67:18: parent=b8, update nil v33 !=
+./f.go:67:18: parent=b8, update v30 v11 <
+./f.go:67:18: parent=b8, update v11 v8 >=
+./f.go:67:18: parent=b8, update v30 v11 <
+./f.go:67:18: parent=b8, update v11 v8 >=
+./f.go:67:18: parent=b8, update v31 v11 <
+./f.go:67:18: parent=b8, update nil v33 ==
+./f.go:67:18: parent=b8, update v30 v11 >=
+./f.go:67:18: parent=b8, update v8 v11 >
+./f.go:67:18: unsat v8 v11 >
+./f.go:67:18: parent=b8, update v31 v11 >=
+./f.go:67:18: Proved IsInBounds (v33)
+./f.go:67:24: parent=b9, update nil v40 !=
+./f.go:67:24: parent=b9, update v39 v9 !=
+./f.go:67:24: parent=b9, new limits v39 v9 != sm,SM,um,UM=-9223372036854775808,9223372036854775807,0,18446744073709551615
+./f.go:67:24: parent=b9, update v39 v9 !=
+./f.go:67:24: parent=b9, new limits v39 v9 != sm,SM,um,UM=-9223372036854775808,9223372036854775807,1,18446744073709551615
+./f.go:67:24: parent=b9, update nil v40 ==
+./f.go:67:24: parent=b9, update v39 v9 ==
+./f.go:67:24: parent=b9, new limits v39 v9 == sm,SM,um,UM=0,0,0,18446744073709551615
+./f.go:67:24: parent=b9, update v39 v9 ==
+./f.go:67:24: parent=b9, new limits v39 v9 == sm,SM,um,UM=0,0,0,0

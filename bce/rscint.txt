@@ -1,0 +1,204 @@
+# command-line-arguments
+
+54 Checkpoint: Begin Prove
+Begin len/cap op search
+
+54   update from len/cap search
+54    parent=b1, update v10 v9 signed >=
+54    parent=b1, new limits v10 v9 signed >= sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+End len/cap op search 
+ Get Induction Vars from loop_bce 
+
+Begin worklist value prop
+
+
+54 Checkpoint: b1 DFS Descending, idom:<nil>
+
+54 Checkpoint: b4 DFS Descending, idom:b1
+54  addRestrictions from addBranchRestrictions plain
+54   update from addRestrictions
+54    parent=b1, update nil v11 boolean !=
+54  addRestrictions from addBranchRestrictions domainRelationTable
+54   update from addRestrictions
+54    parent=b1, update v8 v10 signed <
+54   update from addRestrictions
+54    parent=b1, update v8 v10 unsigned <
+54   update from addRestrictions
+54    parent=b1, update v9 v8 signed <=
+54    parent=b1, new limits v8 v9 signed >= sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+55 Checkpoint: b2 DFS Descending, idom:b4
+54  addRestrictions from addBranchRestrictions plain
+54   update from addRestrictions
+54    parent=b4, update nil v18 boolean !=
+54  addRestrictions from addBranchRestrictions domainRelationTable
+54   update from addRestrictions
+54    parent=b4, update v17 v9 signed !=
+54    parent=b4, new limits v17 v9 signed != sm,SM,um,UM=-9223372036854775808,9223372036854775807,0,18446744073709551615
+54   update from addRestrictions
+54    parent=b4, update v17 v9 unsigned !=
+54    parent=b4, new limits v17 v9 unsigned != sm,SM,um,UM=-9223372036854775808,9223372036854775807,1,18446744073709551615
+55 Restore: b2 DFS Descending(simplify)
+55 Restore old limits v8 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+55 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+
+57 Checkpoint: b3 DFS Descending, idom:b4
+54  addRestrictions from addBranchRestrictions plain
+54   update from addRestrictions
+54    parent=b4, update nil v18 boolean ==
+54  addRestrictions from addBranchRestrictions domainRelationTable
+54   update from addRestrictions
+54    parent=b4, update v17 v9 signed ==
+54    parent=b4, new limits v17 v9 signed == sm,SM,um,UM=0,0,0,18446744073709551615
+54   update from addRestrictions
+54    parent=b4, update v17 v9 unsigned ==
+54    parent=b4, new limits v17 v9 unsigned == sm,SM,um,UM=0,0,0,0
+
+60 Checkpoint: b7 DFS Descending, idom:b3
+60 Restore: b7 DFS Descending(simplify)
+60 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+60 Restore old limits v8 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+60 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+
+
+57 Checkpoint: b8 DFS Descending, idom:b3
+57  addRestrictions from addBranchRestrictions plain
+57   update from addRestrictions
+57    parent=b3, update nil v24 boolean !=
+57  addRestrictions from addBranchRestrictions domainRelationTable
+57   update from addRestrictions
+57    parent=b3, update v8 v9 signed >
+57    parent=b3, new limits v8 v9 signed > sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+57   update from addRestrictions
+57    parent=b3, update v8 v9 unsigned >
+57    parent=b3, new limits v8 v9 unsigned > sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+
+57 Checkpoint: b9 DFS Descending, idom:b8
+57  addRestrictions from addBranchRestrictions plain
+57   update from addRestrictions
+57    parent=b8, update nil v29 boolean !=
+57  addRestrictions from addBranchRestrictions domainRelationTable
+57   update from addRestrictions
+57    parent=b8, update v27 v10 signed <
+57    parent=b8, update v10 v8 signed >=
+57   update from addRestrictions
+57    parent=b8, update v27 v10 unsigned <
+57    parent=b8, update v10 v8 unsigned >=
+57   update from addRestrictions
+57    parent=b8, update v9 v27 signed <=
+57    parent=b8, new limits v27 v9 signed >= sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57    parent=b8, update v8 v9 signed >
+57    parent=b8, new limits v8 v9 signed > sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+57 x+d >= w; x:v8 b8 delta:-1 w:0 d:signed
+57    parent=b8, update v8 v20 signed >=
+57    parent=b8, new limits v8 v20 signed >= sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+
+58 Checkpoint: b6 DFS Descending, idom:b9
+57  addRestrictions from addBranchRestrictions plain
+57   update from addRestrictions
+57    parent=b9, update nil v36 boolean !=
+57  addRestrictions from addBranchRestrictions domainRelationTable
+57   update from addRestrictions
+57    parent=b9, update v35 v9 signed !=
+57    parent=b9, new limits v35 v9 signed != sm,SM,um,UM=-9223372036854775808,9223372036854775807,0,18446744073709551615
+57   update from addRestrictions
+57    parent=b9, update v35 v9 unsigned !=
+57    parent=b9, new limits v35 v9 unsigned != sm,SM,um,UM=-9223372036854775808,9223372036854775807,1,18446744073709551615
+58 Restore: b6 DFS Descending(simplify)
+58 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+58 Restore old limits v27 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+58 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+58 Restore old limits v8 sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+
+
+57 Checkpoint Simplify: b9 -> b9 Branch: %!s(ssa.branch=2)
+57  addRestrictions from addBranchRestrictions plain
+57   update from addRestrictions
+57    parent=b9, update nil v36 boolean ==
+57  addRestrictions from addBranchRestrictions domainRelationTable
+57   update from addRestrictions
+57    parent=b9, update v35 v9 signed ==
+57    parent=b9, new limits v35 v9 signed == sm,SM,um,UM=0,0,0,18446744073709551615
+57   update from addRestrictions
+57    parent=b9, update v35 v9 unsigned ==
+57    parent=b9, new limits v35 v9 unsigned == sm,SM,um,UM=0,0,0,0
+57 Restore Simplify: b9 -> b9 Branch: %!s(ssa.branch=2)
+57 Restore old limits v27 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v8 sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+57 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+
+57 Restore: b9 DFS Descending(simplify)
+57 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v8 sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+57 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+
+
+57 Checkpoint: b10 DFS Descending, idom:b8
+57  addRestrictions from addBranchRestrictions plain
+57   update from addRestrictions
+57    parent=b8, update nil v29 boolean ==
+57  addRestrictions from addBranchRestrictions domainRelationTable
+57   update from addRestrictions
+57    parent=b8, update v27 v10 signed >=
+57    parent=b8, update v8 v10 signed >
+57 update poset unsat v8 v10 signed >
+57 x+d >= w; x:v8 b8 delta:-1 w:0 d:signed
+57    parent=b8, update v8 v10 signed >=
+57   update from addRestrictions
+57    parent=b8, update v27 v10 unsigned >=
+57 Proved IsInBounds (v29)
+57 Remove Branch b8 Branch: 2
+57 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+
+57 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+57 Restore old limits v8 sm,SM,um,UM=1,9223372036854775807,1,18446744073709551615
+
+
+57 Restore: b8 DFS Descending(simplify)
+57 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v8 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+
+
+57 Checkpoint Simplify: b3 -> b3 Branch: %!s(ssa.branch=2)
+57  addRestrictions from addBranchRestrictions plain
+57   update from addRestrictions
+57    parent=b3, update nil v24 boolean ==
+57  addRestrictions from addBranchRestrictions domainRelationTable
+57   update from addRestrictions
+57    parent=b3, update v8 v9 signed <=
+57    parent=b3, new limits v8 v9 signed <= sm,SM,um,UM=0,0,0,0
+57   update from addRestrictions
+57    parent=b3, update v8 v9 unsigned <=
+57    parent=b3, new limits v8 v9 unsigned <= sm,SM,um,UM=0,0,0,0
+57 Restore Simplify: b3 -> b3 Branch: %!s(ssa.branch=2)
+57 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v8 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v17 sm,SM,um,UM=0,0,0,0
+
+57 Restore: b3 DFS Descending(simplify)
+57 Restore old limits v8 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+57 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+54 Restore: b4 DFS Descending(simplify)
+54 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+
+54 Checkpoint: b5 DFS Descending, idom:b1
+54  addRestrictions from addBranchRestrictions plain
+54   update from addRestrictions
+54    parent=b1, update nil v11 boolean ==
+54  addRestrictions from addBranchRestrictions domainRelationTable
+54   update from addRestrictions
+54    parent=b1, update v8 v10 unsigned >=
+54 Restore: b5 DFS Descending(simplify)
+54 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+54 Restore: b1 DFS Descending(simplify)
+54 Restore old limits v10 sm,SM,um,UM=0,9223372036854775807,0,18446744073709551615
+
+54 Restore: End Prove
+dumped SSA to ./ssa.html
