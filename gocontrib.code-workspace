@@ -1,13 +1,19 @@
 {
     "folders": [
-		{
-			"path": "/Users/blobdon/gotip/src/cmd/compile/internal/ssa"
-		},
-		{
-			"path": "."
-		},
-		{
-			"path": "/Users/blobdon/gotip/test"
-		}
-	]
+			{
+				"path": "."
+			},
+			{
+				"path": "/Users/blobdon/gotip/src/cmd/compile/internal/ssa"
+			},
+			{
+				"path": "/Users/blobdon/gotip/test"
+			},
+			{
+				"path": "/home/puppy/gotip/src/cmd/compile/internal/ssa"
+			},
+			{
+				"path": "/home/puppy/gotip/test"
+			}
+		]
 }
