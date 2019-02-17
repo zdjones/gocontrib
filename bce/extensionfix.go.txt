@@ -1,0 +1,55 @@
+        // Special cases
+		switch b.Control.Op {
+		case OpIsInBounds, OpIsSliceInBounds:
+			// 0 <= a0 < a1 (or 0 <= a0 <= a1)
+			//
+			// On the positive branch, we learn a0 < a1,
+			// both signed and unsigned.
+			//
+			// On the negative branch, we learn (0 > a0 ||
+			// a0 >= a1). In the unsigned domain, this is
+			// simply a0 >= a1 (which is the reverse of the
+			// positive branch, so nothing surprising).
+			// But in the signed domain, we can't express the ||
+			// condition, so check if a0 is non-negative instead,
+			// to be able to learn something. 
+			switch br {
+			case negative:
+				d = unsigned
+				if ft.isNonNegative(c.Args[0]) {
+					d |= signed
+				}
+			}
+			
+			// All indexes have been extended to int width before the 
+			// bounds check. In such cases, we need to look back through
+			// the extension and add the branch restrictions for the
+			// underlying non-int Value. Otherwise, the extension prevents
+			// us from seeing previous facts/inferences on that value 
+			// when asserting these branch restrictions. We still want
+			// to also add the restrictions for the extended value, in
+			// case it is used in a different context later in this pass.  
+			switch c.Args[0].Op {
+			case OpSignExt8to16, OpSignExt8to32, OpSignExt8to64, OpSignExt16to32, OpSignExt16to64, OpSignExt32to64,
+				OpZeroExt8to16, OpZeroExt8to32, OpZeroExt8to64, OpZeroExt16to32, OpZeroExt16to64, OpZeroExt32to64:
+				// Get the underlying non-int value
+				uv := c.Args[0]
+				switch br {
+				case negative:
+					uvd := unsigned
+					if ft.isNonNegative(uv.Args[0]) {
+						uvd |= signed
+					}
+					addRestrictions(b, ft, d, uv.Args[0], c.Args[1], tr.r^(lt|gt|eq))
+				case positive:
+					addRestrictions(b, ft, d, uv.Args[0], c.Args[1], tr.r)
+				}
+			}
+		}
+		// All cases
+		switch br {
+		case negative:
+			addRestrictions(b, ft, d, c.Args[0], c.Args[1], tr.r^(lt|gt|eq))
+		case positive:
+			addRestrictions(b, ft, d, c.Args[0], c.Args[1], tr.r)
+		}

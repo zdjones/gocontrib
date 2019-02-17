@@ -1,0 +1,13 @@
+{
+    "folders": [
+		{
+			"path": "/Users/blobdon/gotip/src/cmd/compile/internal/ssa"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "/Users/blobdon/gotip/test"
+		}
+	]
+}
